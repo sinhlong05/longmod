@@ -1,56 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bio của tôi</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="Long Mod — trang cá nhân, dự án, tài nguyên tải xuống và liên hệ.">
+<title>Long Mod — Trang cá nhân</title>
 <style>
-body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:linear-gradient(160deg,#1e1b4b,#0f172a);color:#e2e8f0;display:flex;justify-content:center;padding:40px 16px;box-sizing:border-box;overflow-x:hidden}
-.wrap{width:100%;max-width:420px;text-align:center;position:relative;z-index:2}
-.avatar{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#22d3ee);margin:0 auto 14px}
-h1{margin:0;font-size:1.5rem}
-.job{color:#a5b4fc;font-size:.9rem;margin:4px 0 12px}
-.bio{color:#cbd5e1;font-size:.95rem;line-height:1.6;margin-bottom:24px}
-.btn{display:block;padding:14px;margin:10px 0;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;text-decoration:none;font-weight:600}
-.btn:hover{background:rgba(168,85,247,.25)}
-.foot{margin-top:28px;font-size:.8rem;color:#64748b}
-#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+:root{color-scheme:dark;--bg:#080c18;--panel:#11182a;--panel2:#151e33;--text:#f4f6ff;--muted:#aab4cc;--accent:#8b6cff;--cyan:#51e1d4;--line:#29334c;--good:#8be7bb}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:radial-gradient(ellipse at 75% -10%,#38266c 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}.wrap{width:min(1100px,92%);margin:auto}.nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid #ffffff14;background:#080c18eF;backdrop-filter:blur(14px)}.brand{font-weight:900;letter-spacing:.7px}.brand span{color:var(--cyan)}.navlinks{display:flex;gap:22px;color:var(--muted);font-size:14px}.navlinks a:hover,.socials a:hover{color:var(--cyan)}.hero{padding:78px 0 58px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:40px}.eyebrow{display:inline-flex;gap:9px;align-items:center;border:1px solid #51e1d455;color:var(--cyan);border-radius:99px;padding:5px 12px;font-size:12px;letter-spacing:1px;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}h1{font-size:clamp(42px,7vw,76px);line-height:1.04;letter-spacing:-3px;margin:22px 0}h1 em{font-style:normal;background:linear-gradient(90deg,var(--cyan),#ad9bff);color:transparent;background-clip:text}.lead{max-width:590px;color:var(--muted);font-size:18px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{cursor:pointer;padding:11px 17px;border-radius:12px;font-weight:750;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;gap:8px;color:var(--text);background:transparent;transition:.18s}.btn:hover{transform:translateY(-2px);border-color:#8b6cff}.primary{background:var(--accent);border-color:var(--accent)}.profile-card{background:linear-gradient(145deg,#1a2440,#101626);border:1px solid #ffffff18;border-radius:26px;padding:28px;box-shadow:0 25px 80px #0005;position:relative;overflow:hidden}.profile-card:before{content:'';position:absolute;width:180px;height:180px;background:#7c5cff33;filter:blur(55px);right:-30px;top:-40px}.avatar{width:96px;height:96px;border-radius:28px;background:linear-gradient(135deg,var(--accent),var(--cyan));display:grid;place-items:center;font-size:35px;font-weight:900;color:white;position:relative}.profile-card h2{margin:17px 0 0;font-size:25px}.muted{color:var(--muted)}.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;margin-top:8px;color:var(--good)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:24px}.stat{background:#ffffff08;border:1px solid #ffffff0c;border-radius:13px;padding:11px}.stat b{display:block;font-size:20px}.stat small{color:var(--muted);font-size:11px}section{padding:48px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:23px}.section-head p{margin:0;color:var(--muted);max-width:490px}.section-title{font-size:clamp(26px,4vw,34px);letter-spacing:-1px;margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:linear-gradient(160deg,var(--panel),#0e1423);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.2s;min-width:0}.card:hover{transform:translateY(-4px);border-color:#8b6cff99}.icon{font-size:25px}.card h3{margin:11px 0 6px}.card p{margin:0;color:var(--muted);font-size:14px;overflow-wrap:anywhere}.tag{display:inline-block;margin-top:15px;padding:4px 9px;border-radius:8px;background:#8b6cff20;color:#d0c7ff;font-size:12px}.card-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}.card-actions .btn{font-size:13px;padding:8px 11px}.contact{background:linear-gradient(120deg,#171b39,#11252f);border:1px solid #ffffff18;border-radius:24px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:24px}.contact h2{margin:0 0 8px;font-size:29px}.contact p{margin:0;color:var(--muted)}.socials{display:flex;gap:16px;flex-wrap:wrap}.socials a{color:var(--muted)}footer{padding:28px 0;border-top:1px solid #ffffff12;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.admin-launch{opacity:.7;font-size:12px}.admin-panel{display:none;margin:20px 0 50px;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--panel)}.admin-panel.open{display:block}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:13px;color:var(--muted)}.field input,.field textarea{width:100%;padding:11px 12px;color:var(--text);background:#080d19;border:1px solid var(--line);border-radius:10px}.field textarea{min-height:88px;resize:vertical}.wide{grid-column:1/-1}.notice{font-size:13px;color:#ffd89b;background:#382c17;padding:12px 14px;border-radius:10px;margin:12px 0}.admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.empty{border:1px dashed var(--line);border-radius:14px;padding:20px;color:var(--muted);font-size:14px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:54px 0 30px}.profile-card{max-width:460px}.cards{grid-template-columns:1fr}.navlinks{gap:12px;font-size:12px}.navlinks a:nth-child(2){display:none}.section-head{display:block}.section-head p{margin-top:8px}.contact{display:block}.contact .btn{margin-top:18px}h1{letter-spacing:-2px}.admin-grid{grid-template-columns:1fr}.wide{grid-column:auto}.stats{max-width:380px}}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1}
 </style>
 </head>
-<body>
-<div class="wrap">
-  <div class="avatar"></div>
-  <h1>Tên của bạn</h1>
-  <div class="job">Nghề nghiệp / vai trò của bạn</div>
-  <div class="bio">Giới thiệu ngắn về bản thân, điều bạn làm và điều bạn quan tâm.</div>
-
-  <a class="btn" href="https://zalo.me/0000000000" target="_blank">Liên hệ qua Zalo</a>
-  <a class="btn" href="mailto:ten@email.com">Gửi email</a>
-  <a class="btn" href="https://facebook.com/tenban" target="_blank">Facebook</a>
-  <a class="btn" href="https://example.com/tai-xuong" target="_blank">Tải tài liệu</a>
-
-  <div class="foot">© 2026 Tên của bạn</div>
-</div>
-<canvas id="fx"></canvas>
+<body><div class="wrap">
+<header class="nav"><a class="brand" href="#home">LONG<span>MOD</span>.</a><nav class="navlinks" aria-label="Điều hướng"><a href="#about">Giới thiệu</a><a href="#projects">Dự án</a><a href="#downloads">Tải xuống</a><a href="#contact">Liên hệ</a></nav></header>
+<main>
+<section class="hero" id="home"><div><div class="eyebrow"><span class="dot"></span> Trang cá nhân</div><h1>Xin chào,<br>mình là <em>Long Mod.</em></h1><p class="lead" id="introText">Không gian cá nhân để giới thiệu bản thân, chia sẻ dự án và kết nối với mọi người. Đơn giản, hiện đại và thân thiện với điện thoại.</p><div class="actions"><a class="btn primary" href="#projects">Khám phá dự án ↗</a><a class="btn" href="#contact">Liên hệ với mình</a></div></div>
+<aside class="profile-card"><div class="avatar">LM</div><h2>Long Mod</h2><div class="muted">Creator · Modding · Công nghệ</div><div class="status"><span class="dot"></span> Sáng tạo và chia sẻ mỗi ngày</div><div class="stats"><div class="stat"><b>01</b><small>Trang cá nhân</small></div><div class="stat"><b>∞</b><small>Ý tưởng</small></div><div class="stat"><b>24/7</b><small>Luôn học hỏi</small></div></div></aside></section>
+<section id="about"><div class="section-head"><h2 class="section-title">Một chút về mình</h2><p>Thích khám phá công nghệ, thử nghiệm ý tưởng và chia sẻ những thứ hữu ích.</p></div><div class="cards"><article class="card"><div class="icon">🧩</div><h3>Sáng tạo</h3><p>Thử nghiệm ý tưởng mới và tìm cách biến chúng thành sản phẩm thực tế.</p></article><article class="card"><div class="icon">🛠️</div><h3>Mod & công nghệ</h3><p>Giới thiệu các dự án cá nhân, bản thử nghiệm và ghi chú kỹ thuật.</p></article><article class="card"><div class="icon">🌐</div><h3>Kết nối</h3><p>Chia sẻ thông tin và giúp mọi người dễ dàng tìm thấy các kênh của mình.</p></article></div></section>
+<section id="projects"><div class="section-head"><h2 class="section-title">Dự án nổi bật</h2><p>Các dự án mẫu — hãy thay bằng dự án thật của bạn trong phần quản trị.</p></div><div class="cards" id="projectCards"></div></section>
+<section id="downloads"><div class="section-head"><h2 class="section-title">Tài nguyên tải xuống</h2><p>Chỉ tải tệp do bạn sở hữu hoặc có quyền chia sẻ. Đường dẫn mẫu cần được thay trước khi công bố.</p></div><div class="cards" id="downloadCards"></div></section>
+<section id="contact"><div class="contact"><div><h2>Kết nối với mình</h2><p id="contactText">Bạn có dự án hay ý tưởng muốn trao đổi? Hãy liên hệ với mình.</p><div class="socials" style="margin-top:14px" id="socialLinks"></div></div><a class="btn primary" id="emailButton" href="mailto:hello@example.com">Gửi email ↗</a></div></section>
+<section id="admin" class="admin-panel"><h2 class="section-title">Quản trị nội dung</h2><p class="muted">Chỉnh nội dung rồi xuất bản lại file HTML để cập nhật website công khai.</p><div class="notice">Lưu ý: đây là trang tĩnh không có máy chủ. Phần quản trị này không được bảo vệ an toàn bằng mật khẩu và các thay đổi chỉ áp dụng trên trình duyệt hiện tại cho đến khi bạn xuất file HTML mới rồi tải lên hosting. Không nhập thông tin bí mật.</div>
+<div class="admin-grid"><div class="field wide"><label for="editIntro">Lời giới thiệu</label><textarea id="editIntro"></textarea></div><div class="field"><label for="editEmail">Email liên hệ</label><input id="editEmail" placeholder="ban@example.com"></div><div class="field"><label for="editFacebook">Link Facebook</label><input id="editFacebook" placeholder="https://facebook.com/..."></div><div class="field"><label for="editYoutube">Link YouTube</label><input id="editYoutube" placeholder="https://youtube.com/..."></div><div class="field"><label for="editTiktok">Link TikTok</label><input id="editTiktok" placeholder="https://tiktok.com/@..."></div>
+<div class="field"><label for="proj1Title">Tên dự án 1</label><input id="proj1Title"></div><div class="field"><label for="proj1Desc">Mô tả dự án 1</label><input id="proj1Desc"></div><div class="field"><label for="proj1Url">Link dự án 1 (tuỳ chọn)</label><input id="proj1Url"></div>
+<div class="field"><label for="proj2Title">Tên dự án 2</label><input id="proj2Title"></div><div class="field"><label for="proj2Desc">Mô tả dự án 2</label><input id="proj2Desc"></div><div class="field"><label for="proj2Url">Link dự án 2 (tuỳ chọn)</label><input id="proj2Url"></div>
+<div class="field"><label for="proj3Title">Tên dự án 3</label><input id="proj3Title"></div><div class="field"><label for="proj3Desc">Mô tả dự án 3</label><input id="proj3Desc"></div><div class="field"><label for="proj3Url">Link dự án 3 (tuỳ chọn)</label><input id="proj3Url"></div>
+<div class="field"><label for="down1Title">Tên tệp tải xuống 1</label><input id="down1Title"></div><div class="field"><label for="down1Desc">Mô tả tệp 1</label><input id="down1Desc"></div><div class="field wide"><label for="down1Url">URL tải tệp 1 (đường dẫn trực tiếp)</label><input id="down1Url" placeholder="https://..."></div>
+<div class="field"><label for="down2Title">Tên tệp tải xuống 2</label><input id="down2Title"></div><div class="field"><label for="down2Desc">Mô tả tệp 2</label><input id="down2Desc"></div><div class="field wide"><label for="down2Url">URL tải tệp 2 (đường dẫn trực tiếp)</label><input id="down2Url" placeholder="https://..."></div></div>
+<div class="admin-actions"><button class="btn primary" id="applyBtn">Xem trước thay đổi</button><button class="btn" id="exportBtn">Xuất HTML hoàn chỉnh</button><button class="btn" id="resetBtn">Khôi phục mẫu</button></div><p id="adminStatus" class="muted" aria-live="polite"></p></section>
+</main><footer><span>© <span id="year"></span> Long Mod. Made with care.</span><div class="socials"><a href="#contact">Liên hệ</a><a href="#projects">Dự án</a><a href="#admin" id="adminLink">Quản trị</a></div></footer></div>
 <script>
-const c=document.getElementById('fx'),x=c.getContext('2d');
-function rs(){c.width=innerWidth;c.height=innerHeight}
-rs();onresize=rs;
-function mk(f,top){return{f,x:Math.random()*c.width,y:top?-20:Math.random()*c.height,s:f?14+Math.random()*8:2+Math.random()*3,v:.6+Math.random()*1.4,w:Math.random()*6.28,r:Math.random()*6.28}}
-const P=[...Array(60)].map((_,i)=>mk(i%3==0,false));
-function d(){
-  x.clearRect(0,0,c.width,c.height);
-  for(const p of P){
-    p.w+=.02;p.x+=Math.sin(p.w)*.6;p.y+=p.v;p.r+=.02;
-    if(p.y>c.height+30)Object.assign(p,mk(p.f,true));
-    x.save();x.translate(p.x,p.y);
-    if(p.f){x.rotate(p.r);x.font=p.s+'px serif';x.textAlign='center';x.textBaseline='middle';x.fillText('🌸',0,0)}
-    else{x.beginPath();x.arc(0,0,p.s,0,6.28);x.fillStyle='#fff';x.fill()}
-    x.restore();
-  }
-  requestAnimationFrame(d);
+const defaults={
+ intro:"Không gian cá nhân để giới thiệu bản thân, chia sẻ dự án và kết nối với mọi người. Đơn giản, hiện đại và thân thiện với điện thoại.",
+ email:"hello@example.com",facebook:"",youtube:"",tiktok:"",
+ projects:[
+ {title:"Dự án game",desc:"Giới thiệu bản thử nghiệm, hướng dẫn cài đặt và nhật ký cập nhật.",url:"",icon:"🎮",tag:"Đang cập nhật"},
+ {title:"Công cụ & tiện ích",desc:"Tổng hợp các công cụ nhỏ hoặc tài nguyên hữu ích.",url:"",icon:"💻",tag:"Sắp ra mắt"},
+ {title:"Góc chia sẻ",desc:"Bài viết, mẹo sử dụng và kinh nghiệm làm dự án.",url:"",icon:"📚",tag:"Bài viết"}],
+ downloads:[
+ {title:"Tài nguyên mẫu 1",desc:"Thêm link tệp tải xuống của bạn trong phần quản trị.",url:"",icon:"📦"},
+ {title:"Tài nguyên mẫu 2",desc:"Chưa có tệp nào được liên kết.",url:"",icon:"⬇️"}]
+};
+let data=JSON.parse(JSON.stringify(defaults));
+const $=id=>document.getElementById(id);
+const safeUrl=u=>{try{const x=new URL(u);return ["https:","http:","mailto:"].includes(x.protocol)?x.href:""}catch{return ""}};
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function render(){
+ $("introText").textContent=data.intro;
+ $("projectCards").innerHTML=data.projects.map(p=>`<article class="card"><div class="icon">${esc(p.icon||"✦")}</div><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p><span class="tag">${p.url?"Có liên kết":"Dự án cá nhân"}</span>${safeUrl(p.url)?`<div class="card-actions"><a class="btn" href="${esc(safeUrl(p.url))}" target="_blank" rel="noopener">Xem dự án ↗</a></div>`:""}</article>`).join("");
+ $("downloadCards").innerHTML=data.downloads.map(d=>`<article class="card"><div class="icon">${esc(d.icon||"📦")}</div><h3>${esc(d.title)}</h3><p>${esc(d.desc)}</p><div class="card-actions">${safeUrl(d.url)?`<a class="btn primary" href="${esc(safeUrl(d.url))}" target="_blank" rel="noopener" download>Tải xuống ↓</a>`:`<span class="tag">Chưa có liên kết tải</span>`}</div></article>`).join("");
+ $("contactText").textContent=data.email&&data.email!=="hello@example.com"?"Liên hệ qua email hoặc các kênh mạng xã hội bên dưới.":"Thay email và liên kết mạng xã hội trong phần quản trị để mọi người kết nối với bạn.";
+ const em=$("emailButton");em.href="mailto:"+encodeURIComponent(data.email||"hello@example.com").replace(/%40/g,"@");em.textContent="Gửi email ↗";
+ const socials=[["Facebook",data.facebook],["YouTube",data.youtube],["TikTok",data.tiktok]];
+ $("socialLinks").innerHTML=socials.filter(s=>safeUrl(s[1])).map(s=>`<a href="${esc(safeUrl(s[1]))}" target="_blank" rel="noopener">${s[0]} ↗</a>`).join("");
+ $("year").textContent=new Date().getFullYear();
 }
-d();
+const fields=["editIntro","editEmail","editFacebook","editYoutube","editTiktok","proj1Title","proj1Desc","proj1Url","proj2Title","proj2Desc","proj2Url","proj3Title","proj3Desc","proj3Url","down1Title","down1Desc","down1Url","down2Title","down2Desc","down2Url"];
+function fillForm(){const vals={editIntro:data.intro,editEmail:data.email,editFacebook:data.facebook,editYoutube:data.youtube,editTiktok:data.tiktok};
+data.projects.forEach((p,i)=>{vals[`proj${i+1}Title`]=p.title;vals[`proj${i+1}Desc`]=p.desc;vals[`proj${i+1}Url`]=p.url});
+data.downloads.forEach((d,i)=>{vals[`down${i+1}Title`]=d.title;vals[`down${i+1}Desc`]=d.desc;vals[`down${i+1}Url`]=d.url});
+fields.forEach(id=>$(id).value=vals[id]||"");}
+function readForm(){data.intro=$("editIntro").value.trim();data.email=$("editEmail").value.trim();data.facebook=$("editFacebook").value.trim();data.youtube=$("editYoutube").value.trim();data.tiktok=$("editTiktok").value.trim();
+data.projects=[1,2,3].map((n,i)=>({title:$(`proj${n}Title`).value.trim(),desc:$(`proj${n}Desc`).value.trim(),url:$(`proj${n}Url`).value.trim(),icon:["🎮","💻","📚"][i],tag:"Dự án cá nhân"})).filter(p=>p.title);
+data.downloads=[1,2].map(n=>({title:$(`down${n}Title`).value.trim(),desc:$(`down${n}Desc`).value.trim(),url:$(`down${n}Url`).value.trim(),icon:n===1?"📦":"⬇️"})).filter(d=>d.title);}
+$("adminLink").addEventListener("click",()=>{$("admin").classList.toggle("open");if($("admin").classList.contains("open"))fillForm();});
+$("applyBtn").addEventListener("click",()=>{readForm();render();$("adminStatus").textContent="Đã cập nhật bản xem trước trong trang này. Bấm “Xuất HTML hoàn chỉnh” để tạo file đưa lên hosting.";});
+$("resetBtn").addEventListener("click",()=>{data=JSON.parse(JSON.stringify(defaults));fillForm();render();$("adminStatus").textContent="Đã khôi phục nội dung mẫu.";});
+$("exportBtn").addEventListener("click",()=>{readForm();render();const clone=document.documentElement.cloneNode(true);clone.querySelector("#admin").classList.remove("open");clone.querySelector("#admin").style.display="none";clone.querySelector("#admin").remove();clone.querySelector("#adminLink")?.remove();clone.querySelector("#introText").textContent=data.intro;clone.querySelector("#projectCards").innerHTML=$("projectCards").innerHTML;clone.querySelector("#downloadCards").innerHTML=$("downloadCards").innerHTML;clone.querySelector("#contactText").textContent=$("contactText").textContent;clone.querySelector("#emailButton").setAttribute("href",$("emailButton").getAttribute("href"));clone.querySelector("#emailButton").textContent=$("emailButton").textContent;clone.querySelector("#socialLinks").innerHTML=$("socialLinks").innerHTML;clone.querySelector("#year").textContent=new Date().getFullYear();const js=clone.querySelector("script");if(js)js.remove();const out="<!doctype html>\n"+clone.outerHTML;const blob=new Blob([out],{type:"text/html;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="index.html";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);$("adminStatus").textContent="Đã xuất index.html. Tải file này lên GitHub Pages để cập nhật website công khai.";});
+render();fillForm();
 </script>
-</body>
-</html>
+<script>
+(()=>{
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const c=document.createElement('canvas');c.id='fx';document.body.prepend(c);
+const x=c.getContext('2d');
+let W,H;function rs(){W=c.width=innerWidth;H=c.height=innerHeight}rs();addEventListener('resize',rs);
+const R=(a,b)=>a+Math.random()*(b-a);
+function nf(init){return{x:R(0,W),y:init?R(0,H):-10,r:R(1.5,4),v:R(.4,1.2),s:R(0,6.28)}}
+function np(init){return{x:R(0,W),y:init?R(0,H):-30,s:R(12,20),v:R(.8,1.8),w:R(0,6.28),r:R(0,6.28),vr:R(-.03,.03)}}
+function nb(init){const d=Math.random()<.5?1:-1;return{x:init?R(0,W):(d>0?-40:W+40),y:R(40,H*.45),d,sp:R(.6,1.4),ph:R(0,6.28)}}
+const flakes=[...Array(70)].map(()=>nf(true));
+const petals=[...Array(22)].map(()=>np(true));
+const birds=[...Array(4)].map(()=>nb(true));
+function drawBird(b){x.save();x.translate(b.x,b.y);const f=Math.sin(b.ph)*5;x.strokeStyle='rgba(240,240,255,.75)';x.lineWidth=1.6;x.beginPath();x.moveTo(-9,f-2);x.quadraticCurveTo(-4,f-7,0,0);x.quadraticCurveTo(4,f-7,9,f-2);x.stroke();x.restore()}
+function loop(){
+x.clearRect(0,0,W,H);
+x.fillStyle='rgba(255,255,255,.85)';
+for(const f of flakes){f.y+=f.v;f.s+=.01;f.x+=Math.sin(f.s)*.5;if(f.y>H+5)Object.assign(f,nf(false));x.beginPath();x.arc(f.x,f.y,f.r,0,6.28);x.fill()}
+x.textAlign='center';x.textBaseline='middle';
+for(const p of petals){p.y+=p.v;p.w+=.02;p.x+=Math.sin(p.w);p.r+=p.vr;if(p.y>H+30)Object.assign(p,np(false));x.save();x.translate(p.x,p.y);x.rotate(p.r);x.font=p.s+'px serif';x.fillText('🌸',0,0);x.restore()}
+for(const b of birds){b.x+=b.d*b.sp;b.ph+=.15;b.y+=Math.sin(b.x/60)*.2;if((b.d>0&&b.x>W+40)||(b.d<0&&b.x<-40))Object.assign(b,nb(false));drawBird(b)}
+requestAnimationFrame(loop);
+}
+loop();
+})();
+</script>
+</body></html>
