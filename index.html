@@ -1,122 +1,56 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
-      background: linear-gradient(180deg, #dbeafe, #f1f5f9);
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 30px 16px;
-      overflow-x: hidden;
-    }
-    .card {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 420px;
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.12);
-      overflow: hidden;
-      text-align: center;
-    }
-    .card-header {
-      padding: 18px;
-      color: #3b82f6;
-      font-size: 1.5rem;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    .card-body {
-      background: #eef2f7;
-      padding: 30px 20px 24px;
-    }
-    .avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,.15);
-    }
-    .verify { color: #22c55e; font-size: .85rem; margin-top: 12px; }
-    .name { color: #3b82f6; font-size: 1.4rem; font-weight: bold; margin-top: 6px; }
-    .desc { color: #3b82f6; font-size: .85rem; margin-top: 4px; }
-    .info {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 28px;
-      padding-top: 18px;
-      border-top: 1px solid #d1d5db;
-      text-align: center;
-    }
-    .info div { flex: 1; font-size: .85rem; }
-    .info h4 { color: #3b82f6; font-weight: normal; font-size: 1rem; margin-bottom: 10px; }
-    .info p { color: #333; margin: 6px 0; word-break: break-word; }
-    .info a { color: #333; text-decoration: none; }
-
-    /* Lớp hiệu ứng hoa và tuyết */
-    #fx {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 5;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me</title>
+<style>
+body{margin:0;min-height:100vh;background:linear-gradient(180deg,#dbeafe,#f1f5f9);font-family:Arial,sans-serif;display:flex;justify-content:center;padding:30px 16px;box-sizing:border-box}
+.card{width:100%;max-width:420px;height:fit-content;background:#fff;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.12);overflow:hidden;text-align:center;z-index:1}
+.head{padding:18px;color:#3b82f6;font-size:1.5rem;border-bottom:1px solid #e5e7eb}
+.body{background:#eef2f7;padding:30px 20px}
+.avatar{width:120px;height:120px;border-radius:50%;background:#94a3b8;margin:0 auto}
+.name{color:#3b82f6;font-size:1.4rem;font-weight:bold;margin-top:12px}
+.desc{color:#3b82f6;font-size:.85rem;margin-top:4px}
+.info{display:flex;gap:12px;margin-top:24px;padding-top:16px;border-top:1px solid #d1d5db;font-size:.85rem}
+.info div{flex:1}
+.info h4{color:#3b82f6;font-weight:normal;margin-bottom:8px}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+</style>
 </head>
 <body>
-  <div class="card">
-    <div class="card-header">About Me</div>
-    <div class="card-body">
-      <img class="avatar" src="https://via.placeholder.com/140" alt="Ảnh đại diện">
-      <div class="verify">✔ Verify</div>
-      <div class="name">Tên của bạn</div>
-      <div class="desc">Mô tả ngắn về bản thân</div>
-
-      <div class="info">
-        <div>
-          <h4>Công việc</h4>
-          <p>🌐 yourwebsite.com</p>
-          <p>💼 Nghề nghiệp của bạn</p>
-        </div>
-        <div>
-          <h4>Thông tin liên lạc</h4>
-          <p>✉️ <a href="mailto:ten@email.com">ten@email.com</a></p>
-          <p>📘 <a href="https://facebook.com/tenban" target="_blank">facebook.com/tenban</a></p>
-        </div>
-      </div>
+<div class="card">
+  <div class="head">About Me</div>
+  <div class="body">
+    <div class="avatar"></div>
+    <div class="name">Tên của bạn</div>
+    <div class="desc">Mô tả ngắn về bản thân</div>
+    <div class="info">
+      <div><h4>Công việc</h4><p>Nghề nghiệp của bạn</p><p>yourwebsite.com</p></div>
+      <div><h4>Liên hệ</h4><p>ten@email.com</p><p>facebook.com/tenban</p></div>
     </div>
   </div>
-
-  <canvas id="fx"></canvas>
-
-  <script>
-    const canvas = document.getElementById('fx');
-    const ctx = canvas.getContext('2d');
-
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    function createParticle(type, startAbove) {
-      return {
-        type: type,
-        x: Math.random() * canvas.width,
-        y: startAbove ? -Math.random() * canvas.height : Math.random() * canvas.height,
-        size: type === 'snow' ? 2 + Math.random() * 4 : 16 + Math.random() * 10,
-        speedY: 0.6 + Math.random() * 1.4,
-        speedX: Math.random() * 0.6 - 0.3,
-        sway: Math.random() * Math.PI * 2,
-        rot: Math.random() * Mat
+</div>
+<canvas id="fx"></canvas>
+<script>
+const c=document.getElementById('fx'),x=c.getContext('2d');
+function rs(){c.width=innerWidth;c.height=innerHeight}
+rs();onresize=rs;
+const P=[...Array(60)].map((_,i)=>mk(i%3==0));
+function mk(f,top){return{f,x:Math.random()*c.width,y:top?-20:Math.random()*c.height,s:f?16+Math.random()*10:2+Math.random()*4,v:.6+Math.random()*1.4,w:Math.random()*6.28,r:Math.random()*6.28}}
+function d(){
+  x.clearRect(0,0,c.width,c.height);
+  for(const p of P){
+    p.w+=.02;p.x+=Math.sin(p.w)*.6;p.y+=p.v;p.r+=.02;
+    if(p.y>c.height+30)Object.assign(p,mk(p.f,true));
+    x.save();x.translate(p.x,p.y);
+    if(p.f){x.rotate(p.r);x.font=p.s+'px serif';x.textAlign='center';x.textBaseline='middle';x.fillText('🌸',0,0)}
+    else{x.beginPath();x.arc(0,0,p.s,0,6.28);x.fillStyle='#fff';x.fill()}
+    x.restore();
+  }
+  requestAnimationFrame(d);
+}
+d();
+</script>
+</body>
+</html>
